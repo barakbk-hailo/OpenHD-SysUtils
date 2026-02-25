@@ -5,7 +5,7 @@
     {"key": "X_PLATFORM_TYPE_RPI_OLD", "id": 10, "display": "RPI<=3"},
     {"key": "X_PLATFORM_TYPE_RPI_4", "id": 11, "display": "RPI 4"},
     {"key": "X_PLATFORM_TYPE_RPI_CM4", "id": 12},
-    {"key": "X_PLATFORM_TYPE_RPI_5", "id": 12, "display": "RPI 5"},
+    {"key": "X_PLATFORM_TYPE_RPI_5", "id": 13, "display": "RPI 5"},
     {"key": "X_PLATFORM_TYPE_ROCKCHIP_RK3566_RADXA_ZERO3W", "id": 20, "display": "RADXA ZERO3W"},
     {"key": "X_PLATFORM_TYPE_ROCKCHIP_RK3588_RADXA_ROCK5_A", "id": 21, "display": "RADXA RK3588S"},
     {"key": "X_PLATFORM_TYPE_ROCKCHIP_RK3588_RADXA_ROCK5_B", "id": 22, "display": "RADXA RK3588"},
@@ -53,6 +53,13 @@
       "log": "Detected Allwinner platform (X20).",
       "conditions": [
         {"type": "file_exists", "path": "/dev/cedar_dev"}
+      ]
+    },
+    {
+      "platform": "X_PLATFORM_TYPE_RPI_5",
+      "log": "Raspberry Pi 5 detected.",
+      "conditions": [
+        {"type": "file_contains_any", "path": "/proc/device-tree/model", "values": ["Raspberry Pi 5"]}
       ]
     },
     {
